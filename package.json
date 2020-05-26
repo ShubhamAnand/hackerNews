@@ -1,7 +1,7 @@
 {
   "name": "hackerNewsSSR",
   "version": "1.0.0",
-  "description": "Variation of hackerNews &  developed by Shubham",
+  "description": "Variation of the hackerNews &  developed by Shubham",
   "main": "index.js",
   "scripts": {
     "webpack": "webpack -wd",
