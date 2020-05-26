@@ -7,6 +7,7 @@
     "webpack": "webpack -wd",
     "webpackprod": "webpack -p",
     "dev": "nodemon --exec babel-node src/server.js",
+    "prod": "babel-node src/server.js",
     "lint": "eslint src/**/*.js src/**/*.jsx"
   },
   "keywords": [],
