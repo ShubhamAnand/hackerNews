@@ -9,20 +9,17 @@ This application uses https://hn.algolia.com/api api to load posts from Hacker N
 This project is deployed live at http://34.72.209.226:8080/
 
 # Homepage
-![home_page] (https://user-images.githubusercontent.com/5261962/82980983-761cc180-a008-11ea-97c5-ea315efd042c.png)
+![home_page] ![Screenshot 2020-05-27 at 10 50 28 AM](https://user-images.githubusercontent.com/5261962/82980983-761cc180-a008-11ea-97c5-ea315efd042c.png)
 
 # Graph for upvotes & Vote count Page
 ![Screenshot 2020-05-27 at 10 50 43 AM](https://user-images.githubusercontent.com/5261962/82980990-7a48df00-a008-11ea-852d-915011c6dbd5.png)
 
-
 # Showing & Hiding Upvotes
-![book_description] (https://user-images.githubusercontent.com/5261962/82980991-7a48df00-a008-11ea-8822-e85db046df93.png)
+![book_description] ![Screenshot 2020-05-27 at 10 51 28 AM](https://user-images.githubusercontent.com/5261962/82980991-7a48df00-a008-11ea-8822-e85db046df93.png)
 
-(https://user-images.githubusercontent.com/5261962/82980994-7a48df00-a008-11ea-975b-84fb2a89db1f.png)
-To deploy a frontend-only React app, use the static-site optimized  
-▶️ [create-react-app-buildpack](https://github.com/mars/create-react-app-buildpack)
 
-⤵️ [Switching from create-react-app-buildpack](#switching-from-create-react-app-buildpack)?
+![Screenshot 2020-05-27 at 10 51 04 AM](https://user-images.githubusercontent.com/5261962/82980994-7a48df00-a008-11ea-975b-84fb2a89db1f.png)
+
 
 
 ## Design Points
@@ -40,16 +37,16 @@ Includes a minimal [Node Cluster](https://nodejs.org/docs/latest-v8.x/api/cluste
 
 ## Demo
 
-[Demo deployment](https://still-garden-60707.herokuapp.com/): example API call from the React UI is [fetched with a relative URL](react-ui/src/App.js#L16) that is served by an Express handler in the Node server.
+[Demo deployment](http://34.72.209.226:8080/): example API call from the React UI is [fetched with a relative URL](react-ui/src/App.js#L16) that is served by an Express handler in the Node server.
 
 
-## Deploy to Heroku
+## Deploy to Server
 
 ```bash
-git clone https://github.com/ShubhamAnand/goodreadsreact.git
-cd goodreadsreact/
-heroku create
-git push heroku master
+git clone https://github.com/ShubhamAnand/hackerNews.git
+cd hackerNews/
+npm install
+npm run start
 ```
 
 This deployment will automatically:
@@ -57,128 +54,48 @@ This deployment will automatically:
   * detect [Node buildpack](https://elements.heroku.com/buildpacks/heroku/heroku-buildpack-nodejs)
   * build the app with
     * `npm install` for the Node server
-    * `npm run build` for create-react-app
-  * launch the web process with `npm start`
-    * serves `../react-ui/build/` as static files
+    * `npm run start` for Building using Webpack & Deploying using babel node
     * customize by adding API, proxy, or route handlers/redirectors
-
-⚠️ Using npm 5’s new `package-lock.json`? We resolved a compatibility issue. See [PR](https://github.com/mars/heroku-cra-node/pull/10) for more details.
-
 👓 More about [deploying to Heroku](https://devcenter.heroku.com/categories/deployment).
 
 
-## Switching from create-react-app-buildpack
-
-If an app was previously deployed with [create-react-app-buildpack](https://github.com/mars/create-react-app-buildpack), then a few steps are required to migrate the app to this architecture:
-
-1. Remove **create-react-app-buildpack** from the app; [heroku/nodejs buildpack](https://devcenter.heroku.com/articles/nodejs-support#activation) will be automatically activated
-  
-    ```bash
-    heroku buildpacks:clear
-    ```
-1. Move the root React app files (including dotfiles) into a `react-ui/` subdirectory
-
-    ```bash
-    mkdir react-ui
-    git mv -k [!react-ui]* react-ui/
-    mv node_modules react-ui/
-    
-    # If you see "fatal: Not a git repository", then fix that error
-    mv react-ui/.git ./
-    ```
-    ⚠️ *Some folks have reported problems with these commands. Using the `bash` shell will probably allow them to work. Sorry if they do not work for you, know that the point is to move **everything** in the repo into the `react-ui/` subdirectory. Except for `.git/` which should remain at the root level.* 
-1. Create a root [`package.json`](package.json), [`server/`](server/), & [`.gitignore`](.gitignore) modeled after the code in this repo
-1. Commit and deploy ♻️
-  
-    ```bash
-    git add -A
-    git commit -m 'Migrate from create-react-app-buildpack to Node server'
-    git push heroku master
-    ```
-  
-
-## Local Development
-
-Because this app is made of two npm projects, there are two places to run `npm` commands:
-
-1. **Node API server** at the root `./`
-1. **React UI** in `react-ui/` directory.
-
-### Run the API server
-
-In a terminal:
-
-```bash
-# Initial setup
-npm install
-
-# Start the server
-npm start
-```
-
-#### Install new npm packages for Node
-
-```bash
-npm install package-name --save
-```
-
-
-### Run the React UI
-**Prerequisites:** You need to have Node + NPM installed.
-
-**Required Environment Variables:**
-
-`REACT_APP_API_KEY` : Goodreads API Key you can get from [here](https://www.goodreads.com/api/keys).
-
-Save it in the `.env` file as described [here](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-custom-environment-variables)
-
-Having done that, here is how to run the application locally in development mode.
-
-The React app is configured to proxy backend requests to the local Node server. (See [`"proxy"` config](react-ui/package.json))
-
-In a separate terminal from the API server, start the UI:
-
-
-#### Install new npm packages for React UI
-
-```bash
-# Always change directory, first
-cd react-ui/
-
-npm install package-name --save
-
-
-# Building the application:
-
-To build the production assets, run
-
-    npm run build
-
-# Testing the App:
-
-Right now there is only one test suite. (renders without crashing)
-
-    npm test
-    
-```    
-
 #### Features In Current Version:
 
-1. Search for books by title, author, or ISBN.
-2. Resets Search Query using Reset Option provided.
-3. Displays up to 20 search results in Material UI cards.
-4. Displays title, author, and link to Goodreads page.
-5. See the description and rating of the book and brief details about the book by clicking on an individual result.
-6. Single Page Application with extensive caching, so application loads very fast post the first load.
+
+1. Search for books by title, author, or ISBN.Ensure your UI is responsive and clean. (don’t focus to make the code complex; make it clean and working)
+
+1.Hide functionality is correctly implemented.
+
+2. Upvote ui is implemented. 
+
+3. Pagination is working.
+
+4. Previous/back functionality is well implemented.
+
+5. Ensure Page 2 functionality does not break while refreshing it.
+
+6. App state is maintained using Redux.
+
+7. Component is divided properly and try using Atomic Design principle.
+
+8. Incorporated ESlint check
+
+9. App is deployed on Cloud platform (Google App Engine)
+
+10. Incorporated build pipeline.
+
+11. Once u hide news and refresh it, the hidden news should not appear again.
+
+12.The UI should shrink when you minimize the window
+
+13. Single Page Application with extensive caching, so application loads very fast post the first load.
 
 #### Future Implementation in more time:
 
 Some of the things that re left out due to time constraints but I will add them in future are:
 
-1. Writing Snapshot & Unit Tests for all components using Jest & Enzyme with >80% functional coverage 
-2. Ability to login to the Application using Single Sign in.
-3. Save favorite books by creating a like icon for the personalized list of book for logged in user.
-4. Ability to follow author & provide notifications to the user on the latest books from followed Author.
-5. Better Responsive Support for Mobile devices & Adding fractional support for reviews.
+1. Writing Snapshot & Unit Tests for all components using Jest & Enzyme with >80% functional coverage.
+2. Following best coding practices.
+3. Implement upvote functionality (add more upvotes don’t restrict on just one; The timeline chart should update real time as and when the upvote is clicked)
 
 
