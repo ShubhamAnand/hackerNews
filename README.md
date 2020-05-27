@@ -60,31 +60,31 @@ This deployment will automatically:
 
 #### Features In Current Version:
 
-1.Hide functionality is correctly implemented.
+  1. Hide functionality is correctly implemented.
 
-2. Upvote ui is implemented. 
+  2. Upvote ui is implemented. 
 
-3. Pagination is working.
+  3. Pagination is working.
 
-4. Previous/back functionality is well implemented.
+  4. Previous/back functionality is well implemented.
 
-5. Ensure Page 2 functionality does not break while refreshing it.
+  5. Ensure Page 2 functionality does not break while refreshing it.
 
-6. App state is maintained using Redux.
+  6. App state is maintained using Redux.
 
-7. Component is divided properly and try using Atomic Design principle.
+  7. Component is divided properly and try using Atomic Design principle.
 
-8. Incorporated ESlint check
+  8. Incorporated ESlint check
 
-9. App is deployed on Cloud platform (Google App Engine)
+  9. App is deployed on Cloud platform (Google App Engine)
 
-10. Incorporated build pipeline.
+  10. Incorporated build pipeline.
 
-11. Once u hide news and refresh it, the hidden news should not appear again.
+  11. Once u hide news and refresh it, the hidden news should not appear again.
 
-12.The UI should shrink when you minimize the window
+  12. The UI should shrink when you minimize the window
 
-13. Single Page Application with extensive caching, so application loads very fast post the first load.
+  13. Single Page Application with extensive caching, so application loads very fast post the first load.
 
 #### Future Implementation in more time:
 
