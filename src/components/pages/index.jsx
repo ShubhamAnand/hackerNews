@@ -68,7 +68,7 @@ class Index extends React.Component {
   }
 
   DataHandler(pageNumber) {
-    let url = `http://hn.algolia.com/api/v1/search?page=${pageNumber}`;
+    let url = `https://hn.algolia.com/api/v1/search?page=${pageNumber}`;
     axios
       .get(url, {
         responseType: "json"
