@@ -61,9 +61,6 @@ This deployment will automatically:
 
 #### Features In Current Version:
 
-
-1. Search for books by title, author, or ISBN.Ensure your UI is responsive and clean. (don’t focus to make the code complex; make it clean and working)
-
 1.Hide functionality is correctly implemented.
 
 2. Upvote ui is implemented. 
