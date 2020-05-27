@@ -9,17 +9,16 @@ This application uses https://hn.algolia.com/api api to load posts from Hacker N
 This project is deployed live at http://34.72.209.226:8080/
 
 # Homepage
-![home_page] 
-# Search Result Page
+![home_page] (https://user-images.githubusercontent.com/5261962/82980983-761cc180-a008-11ea-97c5-ea315efd042c.png)
 
-![Screenshot 2020-05-27 at 10 50 28 AM](https://user-images.githubusercontent.com/5261962/82980983-761cc180-a008-11ea-97c5-ea315efd042c.png)
+# Graph for upvotes & Vote count Page
 ![Screenshot 2020-05-27 at 10 50 43 AM](https://user-images.githubusercontent.com/5261962/82980990-7a48df00-a008-11ea-852d-915011c6dbd5.png)
-![Screenshot 2020-05-27 at 10 51 28 AM](https://user-images.githubusercontent.com/5261962/82980991-7a48df00-a008-11ea-8822-e85db046df93.png)
-![Screenshot 2020-05-27 at 10 51 04 AM](https://user-images.githubusercontent.com/5261962/82980994-7a48df00-a008-11ea-975b-84fb2a89db1f.png)
-![search_results_page](https://user-images.githubusercontent.com/5261962/55689192-4394ad00-599f-11e9-8b3e-20d8ae8ad8c5.PNG)
-# Book Description Page
-![book_description](https://user-images.githubusercontent.com/5261962/55689193-47283400-599f-11e9-830e-7183f82b39fe.PNG)
 
+
+# Showing & Hiding Upvotes
+![book_description] (https://user-images.githubusercontent.com/5261962/82980991-7a48df00-a008-11ea-8822-e85db046df93.png)
+
+(https://user-images.githubusercontent.com/5261962/82980994-7a48df00-a008-11ea-975b-84fb2a89db1f.png)
 To deploy a frontend-only React app, use the static-site optimized  
 ▶️ [create-react-app-buildpack](https://github.com/mars/create-react-app-buildpack)
 
