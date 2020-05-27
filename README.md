@@ -3,13 +3,13 @@ HackerNews SSR Implementation
 
 # **HackerNews SSR Implementation** React App with a Express on Google Compute Engine
 
-A minimal example of using a Server Side Rendering (server for API, proxy, & routing) with a [React frontend](https://github.com/facebookincubator/create-react-app).
+A minimal example of using a Server Side Rendering (server for API, proxy, & routing) with a [React frontend]
 This application uses https://hn.algolia.com/api api to load posts from Hacker News
 
 This project is deployed live at http://34.72.209.226:8080/
 
 # Homepage
-![home_page](https://user-images.githubusercontent.com/5261962/55689122-aa659680-599e-11e9-8b90-01a0a93659ef.PNG)
+![home_page] 
 # Search Result Page
 ![search_results_page](https://user-images.githubusercontent.com/5261962/55689192-4394ad00-599f-11e9-8b3e-20d8ae8ad8c5.PNG)
 # Book Description Page
