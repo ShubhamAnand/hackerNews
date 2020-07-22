@@ -8,8 +8,8 @@
     "webpackprod": "webpack -p",
     "dev": "nodemon --exec babel-node src/server.js",
     "prod": "npm run webpackprod && babel-node src/server.js",
-    "build":"npm run webpackprod && babel-node src/server.js",
-    "start":"npm run webpackprod && babel-node src/server.js",
+    "build": "npm run webpackprod && babel-node src/server.js",
+    "start": "npm run webpackprod && babel-node src/server.js",
     "lint": "eslint src/**/*.js src/**/*.jsx"
   },
   "keywords": [],
